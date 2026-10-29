@@ -1,0 +1,23 @@
+.marquee { display: flex; overflow: hidden; background: var(--volt); color: var(--preto); border-block: 1px solid var(--preto); }
+
+.track { display: flex; flex: none; width: max-content; animation: marquee 20s linear infinite; }
+.marquee:hover .track,
+.marquee:focus-within .track { animation-play-state: paused; }
+
+.group {
+  display: flex; align-items: center; gap: 22px; padding: 10px 22px 10px 0; font-family: var(--display);
+  font-size: clamp(1.25rem, 2.6vw, 2rem); line-height: 1.1; letter-spacing: .01em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.group span[aria-hidden="true"] { color: var(--preto); opacity: .55; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; width: 100%; }
+  .group[aria-hidden="true"] { display: none; }
+  .group { flex-wrap: wrap; white-space: normal; }
+}

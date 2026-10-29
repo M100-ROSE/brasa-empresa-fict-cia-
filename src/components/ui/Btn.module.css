@@ -1,0 +1,22 @@
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px;
+  padding: 0 28px; border: 2px solid transparent; border-radius: 0; font-family: var(--cond); font-size: .9375rem;
+  font-weight: 700; line-height: 1; letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, color 120ms ease-out,
+              border-color 120ms ease-out, transform 120ms ease-out;
+}
+.btn:active { transform: translateY(2px); }
+
+.volt { background: var(--volt); border-color: var(--volt); color: var(--preto); }
+.volt:hover { background: transparent; color: var(--volt); }
+
+.ghost { background: transparent; border-color: var(--osso); color: var(--osso); }
+.ghost:hover { background: var(--osso); color: var(--preto); }
+
+.dark { background: var(--preto); border-color: var(--preto); color: var(--volt); }
+.dark:hover { background: transparent; color: var(--preto); }
+
+.header { min-height: 48px; padding: 0 16px; font-size: .8125rem; letter-spacing: .07em; }
+
+.row { min-height: 48px; padding: 0 16px; border-width: 1px; font-size: .75rem; letter-spacing: .1em; }

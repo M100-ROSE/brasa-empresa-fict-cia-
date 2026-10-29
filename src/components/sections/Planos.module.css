@@ -1,0 +1,38 @@
+.planos { background: var(--grafite); }
+
+.planGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(12px, 1.6vw, 20px); }
+
+.plan {
+  position: relative; display: flex; flex-direction: column; padding: 26px 24px 30px; background: var(--preto);
+  border: 1px solid var(--chumbo);
+}
+
+.featured { border: 2px solid var(--volt); background: #101012; }
+
+.tag {
+  align-self: flex-start; margin-bottom: 14px; padding: 4px 10px; background: var(--volt); color: var(--preto);
+  font-family: var(--cond); font-size: .6875rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-family: var(--cond); font-size: 1.25rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--cinza-claro);
+}
+
+.price {
+  display: flex; align-items: baseline; gap: 6px; margin-top: 10px; padding-bottom: 22px;
+  border-bottom: 1px solid var(--chumbo); font-family: var(--display); font-size: clamp(2.75rem, 6vw, 4rem);
+  line-height: 1; font-variant-numeric: tabular-nums; color: var(--osso);
+}
+
+.priceText {
+  align-items: center; font-family: var(--cond); font-size: 1rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--fumaca);
+}
+
+.list { display: grid; gap: 10px; margin-top: 22px; font-size: .9375rem; line-height: 1.45; color: var(--cinza-claro); }
+.list li { position: relative; padding-left: 18px; }
+.list li::before { content: ""; position: absolute; left: 0; top: .5em; width: 8px; height: 2px; background: var(--volt); }
+
+.cta { margin-top: 28px; width: 100%; }

@@ -1,30 +1,29 @@
-import { footerContactLinks, footerNavLinks } from '../data/navegacao'
+import { footerContactLinks, footerNavLinks } from '../../data/navegacao'
+import { Brand } from '../ui/Brand'
+import styles from './SiteFooter.module.css'
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
-      <div className="wrap footer__grid">
-        <div className="footer__brand">
-          <p className="brand brand--footer">
-            <span className="brand__mark" aria-hidden="true"></span>
-            <span className="brand__name">BRASA</span>
-          </p>
-          <p className="footer__tagline">Treine na brasa.</p>
-          <p className="footer__text">
+    <footer className={styles.siteFooter}>
+      <div className={`${styles.wrap} ${styles.grid}`}>
+        <div>
+          <Brand as="p" variant="footer" />
+          <p className={styles.tagline}>Treine na brasa.</p>
+          <p className={styles.text}>
             Centro de treinamento funcional e boxe. Turmas fechadas, técnica cobrada, desculpa
             nenhuma.
           </p>
         </div>
 
         <div>
-          <h2 className="footer__title">Unidade Augusta</h2>
-          <address className="footer__text">
+          <h2 className={styles.title}>Unidade Augusta</h2>
+          <address className={styles.text}>
             Rua Augusta, 1.480 — Consolação<br />São Paulo/SP, 01304-001
           </address>
-          <p className="footer__text">
+          <p className={styles.text}>
             Seg a sex, 6h às 22h<br />Sábado, 8h às 13h
           </p>
-          <p className="footer__text">
+          <p className={styles.text}>
             <a
               href="https://maps.google.com/?q=Rua+Augusta+1480+São+Paulo"
               rel="noopener"
@@ -35,8 +34,8 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="footer__title">Contato</h2>
-          <ul className="footer__links">
+          <h2 className={styles.title}>Contato</h2>
+          <ul className={styles.links}>
             {footerContactLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} rel={link.external ? 'noopener' : undefined}>
@@ -48,8 +47,8 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Navegação do rodapé">
-          <h2 className="footer__title">No site</h2>
-          <ul className="footer__links">
+          <h2 className={styles.title}>No site</h2>
+          <ul className={styles.links}>
             {footerNavLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href}>{link.label}</a>
@@ -59,7 +58,7 @@ export function SiteFooter() {
         </nav>
       </div>
 
-      <div className="wrap footer__bottom">
+      <div className={`${styles.wrap} ${styles.bottom}`}>
         <p>© 2026 BRASA Treinamento. Todos os direitos reservados.</p>
         <p>Vagas e horários atualizados em 26/10/2026.</p>
       </div>

@@ -1,0 +1,29 @@
+.grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+
+.body > p { max-width: 62ch; font-size: clamp(1rem, 1.4vw, 1.125rem); line-height: 1.65; color: var(--cinza-claro); }
+
+/* Mesmo estilo de .section__title do SectionHead, reutilizado fora do cabeçalho padrão. */
+.title { composes: sectionTitle from '../../styles/typography.module.css'; }
+
+.pilarList { display: grid; gap: 0; margin-top: 32px; }
+
+.pilarList li {
+  display: grid; grid-template-columns: 44px 1fr; gap: 4px 14px; padding-block: 18px;
+  border-top: 1px solid var(--chumbo); font-size: .9375rem; line-height: 1.5; color: var(--fumaca);
+}
+.pilarList li:last-child { border-bottom: 1px solid var(--chumbo); }
+
+.num {
+  grid-row: 1 / 3; font-family: var(--cond); font-size: .8125rem; font-weight: 700; letter-spacing: .12em;
+  color: var(--volt); padding-top: 3px;
+}
+
+.pilarList strong {
+  display: block; font-family: var(--cond); font-size: 1.25rem; font-weight: 700; line-height: 1.15;
+  letter-spacing: .01em; text-transform: uppercase; color: var(--osso);
+}
+
+@media (min-width: 900px) {
+  .grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .body > p { max-width: 60ch; }
+}

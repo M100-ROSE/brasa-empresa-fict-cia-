@@ -1,0 +1,6 @@
+.overline {
+  display: flex; align-items: center; gap: 10px; font-family: var(--cond); font-size: .8125rem; font-weight: 600;
+  line-height: 1.2; letter-spacing: .16em; text-transform: uppercase; color: var(--volt);
+}
+.overline::before { content: ""; width: 28px; height: 2px; background: currentColor; flex: none; }
+.dark { color: var(--preto); }

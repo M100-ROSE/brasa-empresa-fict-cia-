@@ -1,0 +1,36 @@
+.ctaFinal {
+  padding-block: calc(var(--cut) + clamp(24px, 4vw, 56px)) clamp(48px, 6vw, 88px);
+  background: var(--volt); color: var(--preto);
+  clip-path: polygon(0 var(--cut), 100% 0, 100% 100%, 0 100%);
+}
+
+.wrap { composes: wrap from '../../styles/layout.module.css'; }
+
+.inner { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+
+.title {
+  max-width: 16ch; margin-top: 16px; font-family: var(--display); font-size: clamp(2.5rem, 7.4vw, 6rem);
+  font-weight: 400; line-height: .88; letter-spacing: -.03em; text-transform: uppercase;
+}
+
+.sub { max-width: 44ch; margin-top: 22px; font-size: 1rem; line-height: 1.55; color: #1c1c1a; }
+
+.action { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+
+.note {
+  font-family: var(--cond); font-size: .8125rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: #1c1c1a;
+}
+
+.ctaFinal :focus-visible { outline-color: var(--preto); }
+.ctaFinal .darkBtn:focus-visible { outline-color: var(--volt); }
+
+@media (min-width: 600px) {
+  .action { align-items: flex-start; }
+}
+
+@media (min-width: 900px) {
+  .inner { grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); align-items: end; gap: 48px; }
+  .action { justify-self: end; align-items: flex-end; text-align: right; }
+  .note { max-width: 28ch; }
+}

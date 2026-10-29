@@ -1,0 +1,8 @@
+.tag {
+  padding: 3px 8px; border: 1px solid var(--chumbo); font-family: var(--cond); font-size: .6875rem;
+  font-weight: 600; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase; color: var(--cinza-claro);
+  white-space: nowrap;
+}
+.volt { background: var(--volt); border-color: var(--volt); color: var(--preto); }
+.red { background: var(--vermelho); border-color: var(--vermelho); color: var(--preto); }
+.outline { border-color: var(--volt); color: var(--volt); }

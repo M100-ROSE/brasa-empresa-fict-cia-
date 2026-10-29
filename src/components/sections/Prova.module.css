@@ -1,0 +1,48 @@
+.prova { border-top: 1px solid var(--chumbo); }
+
+.top { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; margin-bottom: clamp(32px, 4vw, 48px); }
+
+/* Mesmo estilo de .section__title do SectionHead, reutilizado fora do cabeçalho padrão. */
+.title { composes: sectionTitle from '../../styles/typography.module.css'; }
+
+.numeros {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; border-top: 1px solid var(--chumbo);
+  padding-top: 18px;
+}
+.numeros dt {
+  font-family: var(--cond); font-size: .6875rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--fumaca);
+}
+.numeros dd {
+  margin-top: 4px; font-family: var(--display); font-size: clamp(2rem, 4.6vw, 3.5rem); line-height: 1;
+  font-variant-numeric: tabular-nums; color: var(--volt);
+}
+
+.quotes { display: grid; gap: 0; }
+
+.quotes li { border-top: 1px solid var(--chumbo); }
+
+.quotes blockquote { padding-block: 24px; }
+
+.quotes p { font-size: 1rem; line-height: 1.5; color: var(--osso); text-wrap: pretty; }
+
+.quotes footer {
+  margin-top: 14px; font-family: var(--cond); font-size: .8125rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--fumaca);
+}
+
+@media (min-width: 480px) {
+  .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quotes li { padding-inline: 20px; }
+}
+
+@media (min-width: 600px) {
+  .quotes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .quotes li:first-child { padding-left: 0; }
+  .quotes li:last-child { padding-right: 0; }
+}
+
+@media (min-width: 900px) {
+  .top { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: end; gap: 48px; }
+  .numeros { border-top: 0; padding-top: 0; }
+}

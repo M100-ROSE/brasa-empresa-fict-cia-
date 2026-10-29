@@ -1,27 +1,30 @@
-import { Btn } from './Btn'
+import { Btn } from '../ui/Btn'
+import { Overline } from '../ui/Overline'
+import styles from './CtaFinal.module.css'
 
 export function CtaFinal() {
   return (
-    <section className="cta-final" id="aula" aria-labelledby="aula-title">
-      <div className="wrap cta-final__inner">
+    <section className={styles.ctaFinal} id="aula" aria-labelledby="aula-title">
+      <div className={`${styles.wrap} ${styles.inner}`}>
         <div>
-          <p className="overline overline--dark">Aula experimental gratuita</p>
-          <h2 className="cta-final__title" id="aula-title">
+          <Overline dark>Aula experimental gratuita</Overline>
+          <h2 className={styles.title} id="aula-title">
             A primeira dói.<br />A segunda vicia.
           </h2>
-          <p className="cta-final__sub">
+          <p className={styles.sub}>
             Uma aula grátis por pessoa, com treinador na sua primeira turma. Vagas limitadas a 16
             por horário.
           </p>
         </div>
-        <div className="cta-final__action">
+        <div className={styles.action}>
           <Btn
             href="mailto:oi@brasa.treino?subject=Quero%20minha%20aula%20gr%C3%A1tis%20na%20BRASA"
             variant="dark"
+            className={styles.darkBtn}
           >
             Quero minha aula grátis <span aria-hidden="true">→</span>
           </Btn>
-          <p className="cta-final__note">
+          <p className={styles.note}>
             Chegue 10 minutos antes. Traga água e más intenções.
           </p>
         </div>

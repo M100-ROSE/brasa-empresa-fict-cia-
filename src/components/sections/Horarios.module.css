@@ -1,0 +1,83 @@
+.table { width: 100%; border-collapse: collapse; text-align: left; }
+
+.table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+.table tbody,
+.table tr,
+.table td { display: block; }
+
+.table tbody tr {
+  display: grid; grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "time spots"
+    "mod mod"
+    "nivel action";
+  gap: 2px 16px; padding-block: 16px; border-top: 1px solid var(--chumbo);
+  transition: background-color 120ms ease-out;
+}
+.table tbody tr:last-child { border-bottom: 1px solid var(--chumbo); }
+.table tbody tr:hover { background: var(--grafite); }
+
+.table th {
+  padding: 0 12px 14px; font-family: var(--cond); font-size: .75rem; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--fumaca);
+}
+
+.table td { padding: 0; border: 0; }
+
+.time {
+  grid-area: time; font-family: var(--cond); font-size: 1.4375rem; font-weight: 700; line-height: 1;
+  font-variant-numeric: tabular-nums; color: var(--osso);
+}
+
+.mod {
+  grid-area: mod; font-family: var(--cond); font-size: 1.0625rem; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--cinza-claro);
+}
+
+.table td[data-label="Nível"] { grid-area: nivel; font-size: .8125rem; color: var(--fumaca); }
+
+.spots {
+  grid-area: spots; display: flex; align-items: center; gap: 7px; font-family: var(--cond); font-size: 1.0625rem;
+  font-weight: 700; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; color: var(--cinza-claro);
+  white-space: nowrap;
+}
+.spotsLow { color: var(--vermelho); font-size: 1.25rem; }
+.spotsLow::before { content: ""; width: 7px; height: 7px; background: var(--vermelho); flex: none; }
+
+.action { grid-area: action; justify-self: end; align-self: center; }
+
+.full {
+  font-family: var(--cond); font-size: .8125rem; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--fumaca);
+}
+
+.table .isFull { opacity: .4; }
+.table .isFull:hover { background: transparent; }
+.table .isFull .spots { color: var(--fumaca); }
+
+.note { margin-top: 18px; font-size: .8125rem; line-height: 1.5; letter-spacing: .02em; color: var(--fumaca); }
+
+@media (min-width: 720px) {
+  .table thead { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+  .table { display: table; }
+  .table tbody { display: table-row-group; }
+  .table thead { display: table-header-group; }
+  .table tr { display: table-row; }
+  .table th,
+  .table td { display: table-cell; }
+
+  .table tbody tr { display: table-row; border-top: 1px solid var(--chumbo); }
+  .table tbody tr:last-child { border-bottom: 0; }
+
+  .table td { padding: 16px 12px; vertical-align: middle; }
+  .table th:first-child,
+  .table td:first-child { padding-left: 0; }
+  .table th:last-child,
+  .table td:last-child { padding-right: 0; text-align: right; }
+
+  .time { font-size: 1.5rem; }
+  .mod { font-size: 1.0625rem; }
+  .table td[data-label="Nível"] { font-size: .875rem; }
+  .action { text-align: right; }
+}

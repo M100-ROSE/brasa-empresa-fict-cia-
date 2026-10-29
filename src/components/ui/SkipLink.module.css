@@ -1,0 +1,7 @@
+.skipLink {
+  position: absolute; top: 8px; left: 8px; z-index: 100; padding: 12px 20px; background: var(--volt);
+  color: var(--preto); font-family: var(--cond); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; text-decoration: none; transform: translateY(-160%);
+  transition: transform 120ms var(--ease);
+}
+.skipLink:focus { transform: translateY(0); }
